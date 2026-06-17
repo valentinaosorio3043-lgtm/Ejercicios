@@ -1,0 +1,20 @@
+class Vehiculo:
+    def __init__(self, marca):
+        self.marca = marca
+
+    def mostrar_marca(self):
+        print(f"Marca: {self.marca}")
+
+class Moto(Vehiculo):
+    def __init__(self, marca, cilindraje):
+        super().__init__(marca)
+        self.cilindraje = cilindraje
+
+    def mostrar_info(self):
+        print(f"Moto marca {self.marca} de {self.cilindraje} cc")
+
+
+moto1 = Moto("Yamaha", 250)
+
+moto1.mostrar_marca()
+moto1.mostrar_info()
