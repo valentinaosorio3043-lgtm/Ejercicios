@@ -1,0 +1,69 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# URL del sitio
+url = "https://books.toscrape.com/catalogue/page-2.html"
+
+# Obtener HTML
+response = requests.get(url)
+
+# Verificar conexión
+print("Código de respuesta:", response.status_code)
+
+# Convertir HTML a objeto Python
+soup = BeautifulSoup(response.text, "html.parser")
+
+# Mostrar título de la página
+print("Título de la página:")
+print(soup.title.text)
+
+# Buscar todos los libros
+libros = soup.find_all("article", class_="product_pod")
+
+print("Cantidad de libros encontrados:", len(libros))
+
+# Extraer título y precio
+datos = []
+
+for libro in libros:
+    # Título
+    titulo = libro.find("h3").find("a")["title"]
+
+    # Precio
+    precio = libro.find("p", class_="price_color").text
+
+    # Limpiar símbolo £
+    precio = precio.replace("£", "").replace("Â", "")
+
+    # Convertir a decimal
+    precio = float(precio)
+
+    # Guardar en lista
+    datos.append({
+        "Titulo": titulo,
+        "Precio": precio
+    })
+
+# Crear DataFrame
+df = pd.DataFrame(datos)
+
+print("\nTabla de libros:")
+print(df)
+
+# Exportar a Excel
+df.to_excel("PrimerEjemplo.xlsx", index=False)
+
+print("\n¡Archivo Excel creado correctamente!")
+
+# Crear gráfica
+plt.figure(figsize=(12, 8))
+plt.barh(df["Titulo"], df["Precio"])
+
+plt.xlabel("Precio en Libras (£)")
+plt.ylabel("Libros")
+plt.title("Precios de Libros - books.toscrape.com")
+
+plt.tight_layout()
+plt.show()
