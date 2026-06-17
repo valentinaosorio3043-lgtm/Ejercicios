@@ -1,0 +1,14 @@
+let a, b, x;
+
+a = 2;
+b = 4;
+
+if (a !== 0) {
+  x = -b / a;
+  console.log("La solucion es: " + x);
+} else {
+  if (b !== 0) {
+    console.log("Solucion imposible");
+  } else {
+    console.log("Solucion indeterminada");
+  }
