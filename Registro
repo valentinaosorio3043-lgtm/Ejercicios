@@ -1,0 +1,38 @@
+let  = {
+  nombre: prompt("Nombre:"),
+  edad: parseInt(prompt("Edad:"))
+};
+
+console.log(persona);
+
+
+
+let persona = {
+  nombre: prompt("Nombre:"),
+  edad: parseInt(prompt("Edad:"))
+};
+
+if (persona.edad >= 18) {
+  console.log("Mayor de edad");
+} else {
+  console.log("Menor de edad");
+}
+
+
+
+
+
+
+
+
+
+
+let est = {
+  nombre: prompt("Nombre:"),
+  nota1: parseFloat(prompt("Nota 1:")),
+  nota2: parseFloat(prompt("Nota 2:"))
+};
+
+let prom = (est.nota1 + est.nota2) / 2;
+
+console.log("Promedio:", prom);
