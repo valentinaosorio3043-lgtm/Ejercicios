@@ -1,0 +1,17 @@
+var divideByFour = function (num) {
+  num / 4;
+};
+var divided = divideByFour(27);
+console.loh(divided);
+
+function sumar(a, b) {
+  return a + b;
+}
+console.log(sumar(3, 4));
+
+function multiplicador(factor) {
+  return function (numero) {};
+}
+const doble = multiplicador(2);
+doble(5);
+console.log(doble(5));
