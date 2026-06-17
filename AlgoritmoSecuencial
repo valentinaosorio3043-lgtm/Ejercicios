@@ -1,0 +1,9 @@
+Algoritmo EstructuraSecuencial
+Definir a, b, suma Como Entero
+a = 5
+b= 3
+suma= a + b
+
+Escribir "La suma es: ", suma
+
+FinAlgoritmo
