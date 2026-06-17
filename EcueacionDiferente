@@ -1,0 +1,21 @@
+let a, b, x;
+
+a = 0;
+b = 0;
+
+if (a !== 0) {
+
+    x = -b / a;
+    console.log("Resultado: " + x);
+
+} else {
+
+    if (b !== 0) {
+        console.log("No existe solucion");
+    } else {
+        console.log("Existen muchas soluciones");
+    }
+
+}
+
+C:\Users\jgavi\OneDrive\Desktop\JAVASCRIPT\ECUACION_DIFERENTE2.js
