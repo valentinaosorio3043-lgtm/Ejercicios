@@ -1,0 +1,16 @@
+let mayor = 0;
+let x;
+
+while (true) {
+  x = parseInt(prompt("Ingrese un número:"));
+
+  if (x < 0) {
+    break;
+  }
+
+  if (x > mayor) {
+    mayor = x;
+  }
+}
+
+console.log("El número mayor es: " + mayor);
